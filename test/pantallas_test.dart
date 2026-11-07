@@ -137,7 +137,8 @@ void main() {
     );
     await tester.tap(find.text('Modo demo (salón de clases)'));
     await tester.pumpAndSettle();
-    await tester.pump(const Duration(milliseconds: 100));
+    await tester.pump(const Duration(seconds: 6));
+    await tester.pumpAndSettle();
     await expectLater(
       find.byType(MaterialApp),
       matchesGoldenFile('screenshots/04_demo.png'),
